@@ -60,39 +60,40 @@ namespace Biblia_Reina_valera_Vs._1960.Clases_Extraer_Datos
 
 
             //using (StreamReader ArchivoTxt = new StreamReader("Biblia_Capitulos.txt"))
-            //    {
-            char[] delimiterChars = { ',', ' ', '.', ':', '\t', '[' };
+            //{
+                char[] delimiterChars1 = { ',', ' ', '.', ':', '\t', '['};
 
-            var Array = Resources.Biblia_Capitulos.Split('\n', '\r').ToArray().Where(h => libro == h.Substring(0, h.IndexOf("[")));
+                var Array = Resources.Biblia_Capitulos.Split('\n', '\r').ToArray().Where(h => !string.IsNullOrEmpty(h)).Where(j=> libro == j.Substring(0,libro.Length));
 
-            
-
-
-                //Substring(libro.Length + 1).Split(delimiterChars).ToArray();
-
-
-            //while (ArchivoTxt.Peek() > -1)
-            //    {
-
-            //       var linea = ArchivoTxt.ReadLine();
-
-            //        if (!string.IsNullOrEmpty(linea))
-            //        {
-            //            if (libro == linea.Substring(0, linea.IndexOf("[")))
-            //            {
-
-            //            char[] delimiterChars = {',',' ','.', ':', '\t', '['};
-
-            //             miarray = linea.Substring(linea.IndexOf("[")+1).Split(delimiterChars).ToArray();
+                foreach (var J in Array)
+                {
+                    miarray = J.Substring(J.IndexOf("[") + 1).Split(delimiterChars1).ToArray();
+                    break;
+                }
 
 
-            //             break;
+                //while (ArchivoTxt.Peek() > -1)
+                //{
 
-            //            }
-            //        }
-            // }
+                //    var linea = ArchivoTxt.ReadLine();
 
-            //ArchivoTxt.Close();
+                //    if (!string.IsNullOrEmpty(linea))
+                //    {
+                //        if (libro == linea.Substring(0, linea.IndexOf("[")))
+                //        {
+
+                //            char[] delimiterChars = { ',', ' ', '.', ':', '\t', '[' };
+
+                //            miarray = linea.Substring(linea.IndexOf("[") + 1).Split(delimiterChars).ToArray();
+
+
+                //            break;
+
+                //        }
+                //    }
+                //}
+
+                //ArchivoTxt.Close();
 
 
             //}

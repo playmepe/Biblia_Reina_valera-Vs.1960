@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>10</ApplicationRevision>
+    <ApplicationRevision>14</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -98,6 +98,12 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Biblia_Reina_valera Vs.1960_TemporaryKey.pfx" />
+    <None Include="bin\Debug\BIBLIA COMPLETA.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="bin\Debug\Biblia_Capitulos.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -124,12 +130,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="bin\Debug\BIBLIA COMPLETA.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\Biblia_Capitulos.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <PublishFile Include="Biblia_Reina_valera Vs.1960.pdb">
       <Visible>False</Visible>
       <Group>
@@ -141,5 +141,6 @@
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

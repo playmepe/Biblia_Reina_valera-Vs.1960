@@ -13,7 +13,7 @@ namespace Biblia_Reina_valera_Vs._1960.Clases_Extraer_Datos
     {
 
 
-        public static List<string> extraerContenido()
+        public static List<string> ExtraerContenido()
         {
             var lista = new List<string>();
         
@@ -25,10 +25,7 @@ namespace Biblia_Reina_valera_Vs._1960.Clases_Extraer_Datos
                 
                 var aray = Resources.Biblia_Capitulos.Split('\n', '\r').ToArray().Where(h => !string.IsNullOrEmpty(h)).ToArray();
 
-                foreach (string value in aray)
-                {
-                    lista.Add(value.Substring(0, value.IndexOf("[")));
-                }
+                foreach (string value in aray) lista.Add(value.Substring(0, value.IndexOf("[")));
 
                 //while (ArchivoTxt.Peek() > -1)
                 //    {
@@ -63,7 +60,7 @@ namespace Biblia_Reina_valera_Vs._1960.Clases_Extraer_Datos
             //{
                 char[] delimiterChars1 = { ',', ' ', '.', ':', '\t', '['};
 
-                var Array = Resources.Biblia_Capitulos.Split('\n', '\r').ToArray().Where(h => !string.IsNullOrEmpty(h)).Where(j=> libro == j.Substring(0,libro.Length));
+                var Array = Resources.Biblia_Capitulos.Split('\n', '\r').ToArray().Where(h => !string.IsNullOrEmpty(h)).Where(j=> libro == j.Substring(0, j.IndexOf("[")));
 
                 foreach (var J in Array)
                 {
@@ -139,10 +136,8 @@ namespace Biblia_Reina_valera_Vs._1960.Clases_Extraer_Datos
 
                 ArchivoTxt.Close();
 
-
             }
-            
-            
+                  
             return miarray.Trim().Split('\n').ToArray();
 
         }

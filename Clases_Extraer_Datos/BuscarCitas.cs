@@ -13,14 +13,15 @@ namespace Biblia_Reina_valera_Vs._1960.Clases_Extraer_Datos
     class BuscarCitas
     {
 
-        public static String [] BuscarVersiculo(string libro,int Capitulo,string Versiculo,string siguienteLibro)
+        public static String[] BuscarVersiculo(string libro, int Capitulo, string Versiculo, string siguienteLibro)
         {
 
             string miarray = "";
             bool Cbol = false, cbol2 = false;
 
-            
-            using (StreamReader ArchivoTxt = new StreamReader("BIBLIA COMPLETA.txt"))
+
+            using (
+                StreamReader ArchivoTxt = new StreamReader("BIBLIA COMPLETA.txt"))
             {
 
 
@@ -49,12 +50,12 @@ namespace Biblia_Reina_valera_Vs._1960.Clases_Extraer_Datos
 
                                 //    var cita = Capitulo + ":" + Versiculo + " ";
                                 if (Regex.IsMatch(linea.Substring(0, 1), @"^[0-9]+$"))
-                                    miarray += "\n" + linea + "\n" ;
+                                    miarray += "\n" + linea + "\n";
                                 else miarray += linea + "\n";
                                 //    if (Capitulo.ToString() == linea.Substring(0, linea.IndexOf(":"))) miarray += linea + "\n";
                                 //    //if (cita == linea.Substring(0, linea.IndexOf(" ")+1)) miarray += linea + "\n";
 
-                                    //}
+                                //}
                             }
 
                         }
@@ -64,7 +65,11 @@ namespace Biblia_Reina_valera_Vs._1960.Clases_Extraer_Datos
                 ArchivoTxt.Close();
             }
 
-            return miarray.Trim().Split('\n').ToArray();
+            var cita = Capitulo + ":" + Versiculo + " ";
+
+            var array = miarray.Trim().Split('\n').ToArray().Where(I =>  cita == I.Substring(0, I.IndexOf(" ") + 1)).ToArray();
+
+            return array;
 
 
         }

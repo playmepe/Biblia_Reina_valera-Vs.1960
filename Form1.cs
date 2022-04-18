@@ -17,7 +17,7 @@ namespace Biblia_Reina_valera_Vs._1960
         {
             InitializeComponent();
 
-            var lista = ExtraerLibrosCapitulosVersiculos.extraerContenido();
+            var lista = ExtraerLibrosCapitulosVersiculos.ExtraerContenido();
 
             this.CBoxLibro.DataSource = lista.ToArray();
         }

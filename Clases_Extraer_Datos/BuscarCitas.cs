@@ -13,10 +13,10 @@ namespace Biblia_Reina_valera_Vs._1960.Clases_Extraer_Datos
     class BuscarCitas
     {
 
-        public static String[] BuscarVersiculo(string libro, int Capitulo, string Versiculo, string siguienteLibro)
+        public static String[] BuscarVersiculo(string libro, int Capitulo, string[] Versiculo, string siguienteLibro)
         {
 
-            string miarray = "";
+            string miarray = ""; string cita = ""; string[] array; string H = null;
             bool Cbol = false, cbol2 = false;
 
 
@@ -45,17 +45,11 @@ namespace Biblia_Reina_valera_Vs._1960.Clases_Extraer_Datos
                             if (cbol2 && !linea.Contains("Epístola "))
                             {
 
-                                //if (linea.Contains(":") && Regex.IsMatch(linea.Substring(0, 1), @"^[0-9]+$")) 
-                                //    {
-
-                                //    var cita = Capitulo + ":" + Versiculo + " ";
+                                
                                 if (Regex.IsMatch(linea.Substring(0, 1), @"^[0-9]+$"))
                                     miarray += "\n" + linea + "\n";
                                 else miarray += linea + "\n";
-                                //    if (Capitulo.ToString() == linea.Substring(0, linea.IndexOf(":"))) miarray += linea + "\n";
-                                //    //if (cita == linea.Substring(0, linea.IndexOf(" ")+1)) miarray += linea + "\n";
-
-                                //}
+                                
                             }
 
                         }
@@ -65,9 +59,31 @@ namespace Biblia_Reina_valera_Vs._1960.Clases_Extraer_Datos
                 ArchivoTxt.Close();
             }
 
-            var cita = Capitulo + ":" + Versiculo + " ";
+            
 
-            var array = miarray.Trim().Split('\n').ToArray().Where(I =>  cita == I.Substring(0, I.IndexOf(" ") + 1)).ToArray();
+            if (Versiculo.Length == 1)
+            {
+
+                cita = Capitulo + ":" + Versiculo[0] + " ";
+                array = miarray.Trim().Split('\n').ToArray().Where(I => cita == I.Substring(0, I.IndexOf(" ") + 1)).ToArray();
+
+            }
+            else {
+             
+                foreach (var i in Versiculo)
+                {
+                    foreach (var j in miarray.Split('\n').ToArray())
+                    {
+                        if (j.Contains(Capitulo + ":" + i + " ")) H += j + "\n"+"\n";
+                    }
+
+                }
+
+                array = H.Split('\n').ToArray();
+            }
+
+            
+
 
             return array;
 

@@ -24,8 +24,7 @@ namespace Biblia_Reina_valera_Vs._1960
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-          
+            listBox1.Visible = false;
 
         }
 
@@ -48,11 +47,26 @@ namespace Biblia_Reina_valera_Vs._1960
                 siguienteLibro = Convert.ToString(CBoxLibro.Items[CBoxLibro.Items.IndexOf(libro) + 1]);
              }
                   
-            this.CBoxVersiculo.DataSource = ExtraerLibrosCapitulosVersiculos.Totalversiculos(libro, capitulo,siguienteLibro);
-
+            CBoxVersiculo.DataSource = ExtraerLibrosCapitulosVersiculos.Totalversiculos(libro, capitulo,siguienteLibro);
+            listBox1.DataSource = CBoxVersiculo.Items;
+            //listBox1.Height = 200;
         }
 
         private void CBoxVersiculo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            string SiguienteLibro = null;
+            RichTxt.Clear();
+
+            if (CBoxLibro.Text != "APOCALIPSIS")
+            {
+                SiguienteLibro = Convert.ToString(CBoxLibro.Items[CBoxLibro.Items.IndexOf(CBoxLibro.Text) + 1]);
+            }
+              RichTxt.Lines = BuscarCitas.BuscarVersiculo(CBoxLibro.Text, Convert.ToInt32(CBoxCapitulo.Text), CBoxVersiculo.Text.Split('\n').ToArray(), SiguienteLibro);
+           
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string SiguienteLibro = null;
             RichTxt.Clear();
@@ -61,10 +75,28 @@ namespace Biblia_Reina_valera_Vs._1960
             {
                 SiguienteLibro = Convert.ToString(CBoxLibro.Items[CBoxLibro.Items.IndexOf(CBoxLibro.Text) + 1]);
             }
-              RichTxt.Lines = BuscarCitas.BuscarVersiculo(CBoxLibro.Text, Convert.ToInt32(CBoxCapitulo.Text), CBoxVersiculo.Text, SiguienteLibro);
 
+            RichTxt.Lines = BuscarCitas.BuscarVersiculo(CBoxLibro.Text, Convert.ToInt32(CBoxCapitulo.Text), listBox1.SelectedItems.Cast<string>().ToArray(), SiguienteLibro);
+            checkBox1.Checked = false;
         }
 
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
 
+                listBox1.Visible =true;
+            }
+            else
+            {
+                listBox1.Visible = false;
+                
+            }
+        }
+
+        private void CBoxVersiculo_DropDown(object sender, EventArgs e)
+        {
+            checkBox1.Checked = false;
+        }
     }
 }

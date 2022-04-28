@@ -16,7 +16,7 @@ namespace Biblia_Reina_valera_Vs._1960.Clases_Extraer_Datos
         public static String[] BuscarVersiculo(string libro, int Capitulo, string[] Versiculo, string siguienteLibro)
         {
 
-            string miarray = ""; string cita = ""; string[] array; string H = null;
+            string miarray = ""; string[] array; string H = null;
             bool Cbol = false, cbol2 = false;
 
 
@@ -44,11 +44,10 @@ namespace Biblia_Reina_valera_Vs._1960.Clases_Extraer_Datos
                             if ("Capítulo " + Capitulo == linea) cbol2 = true;
                             if (cbol2 && !linea.Contains("Epístola "))
                             {
-
-                                
+                             
                                 if (Regex.IsMatch(linea.Substring(0, 1), @"^[0-9]+$"))
-                                    miarray += "\n" + linea + "\n";
-                                else miarray += linea + "\n";
+                                    miarray += "\n" + linea.Substring(Capitulo.ToString().Length + 1) + "\n";
+                                else miarray += linea.Substring(Capitulo.ToString().Length + 1) + "\n";
                                 
                             }
 
@@ -64,8 +63,7 @@ namespace Biblia_Reina_valera_Vs._1960.Clases_Extraer_Datos
             if (Versiculo.Length == 1)
             {
 
-                cita = Capitulo + ":" + Versiculo[0] + " ";
-                array = miarray.Trim().Split('\n').ToArray().Where(I => cita == I.Substring(0, I.IndexOf(" ") + 1)).ToArray();
+                array = miarray.Trim().Split('\n').ToArray().Where(I => I.StartsWith(Versiculo[0] + " ")).ToArray();
 
             }
             else {
@@ -74,7 +72,7 @@ namespace Biblia_Reina_valera_Vs._1960.Clases_Extraer_Datos
                 {
                     foreach (var j in miarray.Split('\n').ToArray())
                     {
-                        if (j.Contains(Capitulo + ":" + i + " ")) H += j + "\n"+"\n";
+                        if (j.StartsWith(i + " ")) H += j + "\n"+"\n";
                     }
 
                 }

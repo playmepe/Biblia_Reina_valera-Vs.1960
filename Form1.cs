@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,7 @@ namespace Biblia_Reina_valera_Vs._1960
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            listBox1.Visible = false;
+            listBox1.Visible = false; 
 
         }
 

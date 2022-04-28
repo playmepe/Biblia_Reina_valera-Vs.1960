@@ -76,6 +76,7 @@
   <ItemGroup>
     <Compile Include="Clases_Extraer_Datos\BuscarCitas.cs" />
     <Compile Include="Clases_Extraer_Datos\ExtraerLibrosCapitulosVersiculos.cs" />
+    <Compile Include="Clases_Extraer_Datos\Renombrar_archivos.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

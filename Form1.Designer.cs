@@ -57,9 +57,9 @@ namespace Biblia_Reina_valera_Vs._1960
             this.panel1.Controls.Add(this.CBoxCapitulo);
             this.panel1.Controls.Add(this.CBoxLibro);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1042, 81);
+            this.panel1.Size = new System.Drawing.Size(1389, 100);
             this.panel1.TabIndex = 0;
             // 
             // checkBox1
@@ -68,10 +68,10 @@ namespace Biblia_Reina_valera_Vs._1960
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.ForeColor = System.Drawing.Color.Aqua;
-            this.checkBox1.Location = new System.Drawing.Point(453, 2);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox1.Location = new System.Drawing.Point(604, 2);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(176, 19);
+            this.checkBox1.Size = new System.Drawing.Size(208, 21);
             this.checkBox1.TabIndex = 8;
             this.checkBox1.Text = "Buscar rango de versiculos";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -83,10 +83,9 @@ namespace Biblia_Reina_valera_Vs._1960
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Window;
-            this.label3.Location = new System.Drawing.Point(633, 7);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(844, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 20);
+            this.label3.Size = new System.Drawing.Size(113, 25);
             this.label3.TabIndex = 5;
             this.label3.Text = "Versiculos";
             // 
@@ -96,10 +95,9 @@ namespace Biblia_Reina_valera_Vs._1960
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(337, 7);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(449, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 20);
+            this.label2.Size = new System.Drawing.Size(103, 25);
             this.label2.TabIndex = 4;
             this.label2.Text = "Capitulos";
             // 
@@ -109,10 +107,9 @@ namespace Biblia_Reina_valera_Vs._1960
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(64, 7);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(85, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 20);
+            this.label1.Size = new System.Drawing.Size(71, 25);
             this.label1.TabIndex = 3;
             this.label1.Text = "Libros";
             // 
@@ -124,10 +121,10 @@ namespace Biblia_Reina_valera_Vs._1960
             this.CBoxVersiculo.ForeColor = System.Drawing.SystemColors.WindowText;
             this.CBoxVersiculo.FormattingEnabled = true;
             this.CBoxVersiculo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.CBoxVersiculo.Location = new System.Drawing.Point(574, 41);
-            this.CBoxVersiculo.Margin = new System.Windows.Forms.Padding(2);
+            this.CBoxVersiculo.Location = new System.Drawing.Point(765, 50);
+            this.CBoxVersiculo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CBoxVersiculo.Name = "CBoxVersiculo";
-            this.CBoxVersiculo.Size = new System.Drawing.Size(194, 25);
+            this.CBoxVersiculo.Size = new System.Drawing.Size(257, 28);
             this.CBoxVersiculo.TabIndex = 2;
             this.CBoxVersiculo.DropDown += new System.EventHandler(this.CBoxVersiculo_DropDown);
             this.CBoxVersiculo.SelectedIndexChanged += new System.EventHandler(this.CBoxVersiculo_SelectedIndexChanged);
@@ -140,10 +137,10 @@ namespace Biblia_Reina_valera_Vs._1960
             this.CBoxCapitulo.ForeColor = System.Drawing.SystemColors.WindowText;
             this.CBoxCapitulo.FormattingEnabled = true;
             this.CBoxCapitulo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.CBoxCapitulo.Location = new System.Drawing.Point(271, 41);
-            this.CBoxCapitulo.Margin = new System.Windows.Forms.Padding(2);
+            this.CBoxCapitulo.Location = new System.Drawing.Point(361, 50);
+            this.CBoxCapitulo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CBoxCapitulo.Name = "CBoxCapitulo";
-            this.CBoxCapitulo.Size = new System.Drawing.Size(207, 25);
+            this.CBoxCapitulo.Size = new System.Drawing.Size(275, 28);
             this.CBoxCapitulo.TabIndex = 1;
             this.CBoxCapitulo.SelectedIndexChanged += new System.EventHandler(this.CBoxCapitulo_SelectedIndexChanged_1);
             // 
@@ -155,10 +152,10 @@ namespace Biblia_Reina_valera_Vs._1960
             this.CBoxLibro.ForeColor = System.Drawing.SystemColors.WindowText;
             this.CBoxLibro.FormattingEnabled = true;
             this.CBoxLibro.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.CBoxLibro.Location = new System.Drawing.Point(20, 40);
-            this.CBoxLibro.Margin = new System.Windows.Forms.Padding(2);
+            this.CBoxLibro.Location = new System.Drawing.Point(27, 49);
+            this.CBoxLibro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CBoxLibro.Name = "CBoxLibro";
-            this.CBoxLibro.Size = new System.Drawing.Size(179, 25);
+            this.CBoxLibro.Size = new System.Drawing.Size(237, 28);
             this.CBoxLibro.TabIndex = 0;
             this.CBoxLibro.SelectedIndexChanged += new System.EventHandler(this.CBoxLibro_SelectedIndexChanged);
             // 
@@ -169,10 +166,10 @@ namespace Biblia_Reina_valera_Vs._1960
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.listBox1);
             this.panel2.Controls.Add(this.RichTxt);
-            this.panel2.Location = new System.Drawing.Point(0, 81);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Location = new System.Drawing.Point(0, 100);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1042, 551);
+            this.panel2.Size = new System.Drawing.Size(1389, 678);
             this.panel2.TabIndex = 1;
             // 
             // listBox1
@@ -180,12 +177,12 @@ namespace Biblia_Reina_valera_Vs._1960
             this.listBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 17;
-            this.listBox1.Location = new System.Drawing.Point(574, 0);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.listBox1.ItemHeight = 20;
+            this.listBox1.Location = new System.Drawing.Point(765, 0);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBox1.Name = "listBox1";
             this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.listBox1.Size = new System.Drawing.Size(194, 497);
+            this.listBox1.Size = new System.Drawing.Size(257, 604);
             this.listBox1.TabIndex = 6;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -197,22 +194,22 @@ namespace Biblia_Reina_valera_Vs._1960
             this.RichTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RichTxt.ForeColor = System.Drawing.SystemColors.Window;
             this.RichTxt.Location = new System.Drawing.Point(0, 0);
-            this.RichTxt.Margin = new System.Windows.Forms.Padding(4);
+            this.RichTxt.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.RichTxt.Name = "RichTxt";
-            this.RichTxt.Size = new System.Drawing.Size(1042, 551);
+            this.RichTxt.Size = new System.Drawing.Size(1389, 678);
             this.RichTxt.TabIndex = 0;
             this.RichTxt.Text = "";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1043, 639);
+            this.ClientSize = new System.Drawing.Size(1391, 786);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(1059, 678);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MinimumSize = new System.Drawing.Size(1406, 824);
             this.Name = "Form1";
             this.Text = "Santa_Biblia_Reina_Valera 1960 vs. -1.0";
             this.Load += new System.EventHandler(this.Form1_Load);

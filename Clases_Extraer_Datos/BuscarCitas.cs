@@ -63,7 +63,7 @@ namespace Biblia_Reina_valera_Vs._1960.Clases_Extraer_Datos
                     }
                 }
 
-                
+            
                 ArchivoTxt.Close();
             }
 

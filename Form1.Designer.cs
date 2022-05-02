@@ -185,6 +185,7 @@ namespace Biblia_Reina_valera_Vs._1960
             this.listBox1.Size = new System.Drawing.Size(257, 604);
             this.listBox1.TabIndex = 6;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.listBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.listBox1_KeyUp);
             // 
             // RichTxt
             // 
@@ -194,8 +195,9 @@ namespace Biblia_Reina_valera_Vs._1960
             this.RichTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RichTxt.ForeColor = System.Drawing.SystemColors.Window;
             this.RichTxt.Location = new System.Drawing.Point(0, 0);
-            this.RichTxt.Margin = new System.Windows.Forms.Padding(5);
+            this.RichTxt.Margin = new System.Windows.Forms.Padding(1);
             this.RichTxt.Name = "RichTxt";
+            this.RichTxt.ShowSelectionMargin = true;
             this.RichTxt.Size = new System.Drawing.Size(1386, 678);
             this.RichTxt.TabIndex = 0;
             this.RichTxt.Text = "";

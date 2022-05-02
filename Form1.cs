@@ -69,17 +69,24 @@ namespace Biblia_Reina_valera_Vs._1960
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string SiguienteLibro = null;
-            RichTxt.Clear();
+            
+                string SiguienteLibro = null;
+                if (ModifierKeys != Keys.Control)
+                {
+                    RichTxt.Clear();
 
-            if (CBoxLibro.Text != "APOCALIPSIS")
-            {
-                SiguienteLibro = Convert.ToString(CBoxLibro.Items[CBoxLibro.Items.IndexOf(CBoxLibro.Text) + 1]);
-            }
+                    if (CBoxLibro.Text != "APOCALIPSIS")
+                    {
+                        SiguienteLibro = Convert.ToString(CBoxLibro.Items[CBoxLibro.Items.IndexOf(CBoxLibro.Text) + 1]);
+                    }
 
-            RichTxt.Lines = BuscarCitas.BuscarVersiculo(CBoxLibro.Text, Convert.ToInt32(CBoxCapitulo.Text), listBox1.SelectedItems.Cast<string>().ToArray(), SiguienteLibro);
-            checkBox1.Checked = false;
+                    RichTxt.Lines = BuscarCitas.BuscarVersiculo(CBoxLibro.Text, Convert.ToInt32(CBoxCapitulo.Text), listBox1.SelectedItems.Cast<string>().ToArray(), SiguienteLibro);
+                    checkBox1.Checked = false; 
+                }
+           
         }
+           
+        
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -99,5 +106,23 @@ namespace Biblia_Reina_valera_Vs._1960
         {
             checkBox1.Checked = false;
         }
+
+        private void listBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+          
+            string SiguienteLibro = null;
+
+                RichTxt.Clear();
+
+                if (CBoxLibro.Text != "APOCALIPSIS")
+                {
+                    SiguienteLibro = Convert.ToString(CBoxLibro.Items[CBoxLibro.Items.IndexOf(CBoxLibro.Text) + 1]);
+                }
+
+                RichTxt.Lines = BuscarCitas.BuscarVersiculo(CBoxLibro.Text, Convert.ToInt32(CBoxCapitulo.Text), listBox1.SelectedItems.Cast<string>().ToArray(), SiguienteLibro);
+                checkBox1.Checked = false;
+         }
+
+        
     }
 }

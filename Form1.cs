@@ -21,12 +21,14 @@ namespace Biblia_Reina_valera_Vs._1960
             var lista = ExtraerLibrosCapitulosVersiculos.ExtraerContenido();
 
             this.CBoxLibro.DataSource = lista.ToArray();
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            listBox1.Visible = false; 
-
+            listBox1.Visible = false;
+            numericUpDown1.Value = (int)RichTxt.Font.Size;
+            radioButton2.Checked = true;
         }
 
         private void CBoxLibro_SelectedIndexChanged(object sender, EventArgs e)
@@ -39,7 +41,7 @@ namespace Biblia_Reina_valera_Vs._1960
 
         private void CBoxCapitulo_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-
+            
             var libro = CBoxLibro.Text;
             var capitulo = CBoxCapitulo.Text;
             string siguienteLibro = null;
@@ -55,7 +57,7 @@ namespace Biblia_Reina_valera_Vs._1960
 
         private void CBoxVersiculo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
             string SiguienteLibro = null;
             RichTxt.Clear();
 
@@ -64,7 +66,7 @@ namespace Biblia_Reina_valera_Vs._1960
                 SiguienteLibro = Convert.ToString(CBoxLibro.Items[CBoxLibro.Items.IndexOf(CBoxLibro.Text) + 1]);
             }
               RichTxt.Lines = BuscarCitas.BuscarVersiculo(CBoxLibro.Text, Convert.ToInt32(CBoxCapitulo.Text), CBoxVersiculo.Text.Split('\n').ToArray(), SiguienteLibro);
-           
+            
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -86,21 +88,7 @@ namespace Biblia_Reina_valera_Vs._1960
            
         }
            
-        
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox1.Checked)
-            {
-
-                listBox1.Visible =true;
-            }
-            else
-            {
-                listBox1.Visible = false;
-                
-            }
-        }
+       
 
         private void CBoxVersiculo_DropDown(object sender, EventArgs e)
         {
@@ -123,6 +111,64 @@ namespace Biblia_Reina_valera_Vs._1960
                 checkBox1.Checked = false;
          }
 
-        
+        private void RichTxt_TextChanged(object sender, EventArgs e)
+        {
+            
+        }    
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+                if (checkBox1.Checked)
+                {
+
+                    listBox1.Visible = true;
+                }
+                else
+                {
+                    listBox1.Visible = false;
+
+                }
+          
+
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+
+                if (RichTxt.Text != null)
+                {
+                    var c = new Font(RichTxt.Font.FontFamily, Convert.ToInt32(numericUpDown1.Value));
+
+                    RichTxt.Font = c;
+                    c.Dispose();
+                }
+            
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked)
+            {
+
+                RichTxt.BackColor = Color.White;
+                RichTxt.ForeColor = Color.Black;
+
+            }
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton2.Checked)
+            {
+                RichTxt.BackColor = Color.Black;
+                RichTxt.ForeColor = Color.White;
+            }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

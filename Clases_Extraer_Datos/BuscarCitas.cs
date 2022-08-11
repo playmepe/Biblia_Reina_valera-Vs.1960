@@ -18,7 +18,6 @@ namespace Biblia_Reina_valera_Vs._1960.Clases_Extraer_Datos
 
             string miarray = ""; string[] array; string H = null;
             bool Cbol = false, cbol2 = false;
-            //string kk = null, l = "";
 
             using (
                 StreamReader ArchivoTxt = new StreamReader("BIBLIA COMPLETA.txt"))
@@ -32,11 +31,6 @@ namespace Biblia_Reina_valera_Vs._1960.Clases_Extraer_Datos
 
                     if (!string.IsNullOrEmpty(linea))
                     {
-                        //if (l.EndsWith("."))
-                        //{
-                        //    kk += "\n" + linea + "\n";
-                        //}
-                        //l += linea;
 
                         if (linea == siguienteLibro) break;
                         if (linea == libro) Cbol = true;
@@ -52,7 +46,7 @@ namespace Biblia_Reina_valera_Vs._1960.Clases_Extraer_Datos
 
                                 if (Regex.IsMatch(linea.Substring(0, 1), @"^[0-9]+$"))
                                 {
-                                    miarray += "-" + linea + " ";
+                                    miarray += "_" + linea + " ";
                                 }
                                 else{
                                     if(miarray.Trim().EndsWith(".")) miarray += "\n"+linea + " "; else  miarray += linea + " ";
@@ -70,13 +64,13 @@ namespace Biblia_Reina_valera_Vs._1960.Clases_Extraer_Datos
 
             if (Versiculo.Length == 1)
             {
-                array = miarray.Trim().Split('-').ToArray().Where(I => I.StartsWith(Versiculo.First() + " ")).ToArray();
+                array = miarray.Trim().Split('_').ToArray().Where(I => I.StartsWith(Versiculo.First() + " ")).ToArray();
             }
             else {
              
                 foreach (var i in Versiculo)
                 {
-                    foreach (var j in miarray.Split('-').ToArray())
+                    foreach (var j in miarray.Split('_').ToArray())
                     {
                         if (j.StartsWith(i + " ")) H += j + "\n"+"\n";
                     }
@@ -86,11 +80,8 @@ namespace Biblia_Reina_valera_Vs._1960.Clases_Extraer_Datos
                 array = H.Split('\n').ToArray();
             }
 
-            
-
 
             return array;
-
 
         }
 

@@ -11,8 +11,6 @@ namespace Biblia_Reina_valera_Vs._1960.Clases_Extraer_Datos
 {
    public class ExtraerLibrosCapitulosVersiculos
     {
-
-
         public static List<string> ExtraerContenido()
         {
             var lista = new List<string>();
